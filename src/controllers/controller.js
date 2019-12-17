@@ -20,10 +20,10 @@ exports.getWeather = (req, res) => {
     })
   } else {
     axios.get(url).then((response) => {
-      const { temp: temperture } = response.data.main
+      const { temp: temperature } = response.data.main
       const { name: location } = response.data
       res.render("index", {
-        weather: `It is currently ${temperture} in ${location}.`
+        weather: `It is currently ${temperature} in ${location}.`
       })
     }).catch((error) => {
       console.log(error)
